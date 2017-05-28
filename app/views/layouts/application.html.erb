@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tetra Science Gallery</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="bottom-bar">
+    <% if user_signed_in? %>
+      <div class="left">
+        Logged in as <strong><%= current_user.email %></strong>
+      </div>
+      <div class="right">
+        <%= link_to "Edit Profile", edit_user_registration_path, class: 'navbar-link' %> | 
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link' %>
+      </div>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path, class: 'left' %>
+      <%= link_to "Login", new_user_session_path, class: 'right' %>
+    <% end %>
+    </div>
+    <% if notice %>
+      <div id="notice"><%= notice %></div>
+    <% end %>
+    <% if alert %>
+      <div class="alert alert-danger"><%= alert %></div>
+    <% end %>
+    </div>
+    <%= yield %>
+  </body>
+</html>

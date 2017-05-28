@@ -1,0 +1,26 @@
+<div class="gallery-page">
+  <header>
+    <div class="nav">
+      <h1>Photos</h1>
+      <div class="right-side">
+        <%= link_to '+ Add New Photo', new_photo_path %>
+      </div>
+    </div>
+  </header>
+
+  <div class="gallery">
+    <% if @photos.size > 0 %>
+      <% @photos.each do | photo | %>
+        <div class="gallery-item">
+          <h3><%= photo.name %></h3>
+          <%= link_to photo do %>
+            <%= image_tag photo.image.url(:gallery) %>
+          <% end %>
+        </div>
+      <% end %>
+    <% else %>
+      <%= link_to "Upload first photo", new_photo_path, class: "big-cta" %>
+    <% end %>
+  </div>
+</div>
+

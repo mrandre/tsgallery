@@ -1,0 +1,12 @@
+<div class="photos-show">
+  <%= link_to "&laquo; Back to Gallery".html_safe, photos_path %>
+  <h1>Photo: <%= @photo.name %></h1>
+  <h3><%= link_to 'Edit', edit_photo_path(@photo) %></h3>
+  <%= image_tag @photo.image.url(:medium) %>
+  <p><%= @photo.description %></p>
+
+  <p>Created: <%= display_time @photo.created_at %></p>
+  <% unless @photo.created_at == @photo.updated_at %>
+    <p>Edited: <%= display_time @photo.updated_at %></p>
+  <% end %>
+</div>

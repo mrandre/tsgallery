@@ -1,0 +1,33 @@
+<div class="photo-form">
+  <%= form_for(photo) do |f| %>
+    <% if photo.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+
+        <ul>
+        <% photo.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <% if photo.image.present? %>
+      <label>Current Photo</label>
+      <%= image_tag photo.image.url(:gallery) %>
+    <% else %>
+      <label><%= f.label :image %></label>
+      <%= f.file_field :image %>
+    <% end %>
+    
+    <label><%= f.label :name %></label>
+    <%= f.text_field :name %>
+
+    <label><%= f.label :description %></label>
+    <%= f.text_area :description %>
+
+    <div class="actions">
+      <%= f.submit %>
+      <%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure you want to remove this photo?' } %>
+    </div>
+  <% end %>
+</div>

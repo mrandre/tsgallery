@@ -7,7 +7,9 @@
 
   <div class="gallery">
     <div class="gallery-item add-button">
-      <h3><%= link_to '+Add New Photo', new_photo_path %></h3>
+      <%= link_to new_photo_path do %>
+        <h3>+Add New Photo</h3>
+      <% end %>
     </div>
     <% if @photos.size > 0 %>
       <% @photos.each do | photo | %>

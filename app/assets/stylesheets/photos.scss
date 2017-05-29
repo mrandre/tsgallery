@@ -70,6 +70,7 @@ body {
     color: #eee;
     border-radius: 5px;
     margin-right: 20px;
+    cursor: pointer;
   }
 }
 
@@ -102,6 +103,7 @@ body {
 
   .gallery {
     margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -165,6 +167,7 @@ body {
           padding: 20px;
           margin: 0;
           width: 250px;
+          cursor: pointer;
 
           &:hover {
             background: $CONTRAST_COLOR;

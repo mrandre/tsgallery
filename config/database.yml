@@ -23,5 +23,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  url: <%= ENV['DATABASE_URL'] %>
+  database: d23u1oaq8fm3u8
+  user: bjmgwkfomjldor
+  password: 6dc79eae981f18911e1181e6cea0ab88f0f47b74540ed78016648aed1846534f
   pool: 5

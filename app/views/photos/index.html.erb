@@ -6,12 +6,12 @@
   </header>
 
   <div class="gallery">
-    <div class="gallery-item add-button">
-      <%= link_to new_photo_path do %>
-        <h3>+Add New Photo</h3>
-      <% end %>
-    </div>
     <% if @photos.size > 0 %>
+      <div class="gallery-item add-button">
+        <%= link_to new_photo_path do %>
+          <h3>+Add New Photo</h3>
+        <% end %>
+      </div>
       <% @photos.each do | photo | %>
         <div class="gallery-item">
           <h3><%= photo.name %></h3>

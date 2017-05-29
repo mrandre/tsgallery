@@ -2,11 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+@import 'colors.scss';
+
 body {
   background-color: #444;
 
   a, a:visited {
-    color: orange;
+    color: $CONTRAST_COLOR;
     font-weight: bold;
     text-decoration: none;
   }
@@ -29,7 +32,7 @@ body {
   a, a:visited {
     text-decoration: none;
     font-weight: bold;
-    color: orange;
+    color: $CONTRAST_COLOR;
   }
 
   img {
@@ -56,21 +59,25 @@ body {
     border-radius: 3px;
     font-size: 16px;
     width: 50%;
+    margin-left: 10px;
+  }
+
+  input[type=file] {
+    margin-left: 10px;
   }
 
   input[type=button],
-  input[type=file],
   input[type=submit] {
     font-size: 18px;
     font-weight: bold;
     padding: 20px;
-    background-color: orange;
-    color: #444;
-    border-color: orange;
+    background-color: #111;
+    border: 1px solid #777;
+    color: #eee;
     border-radius: 5px;
+    margin-right: 10px;
   }
 }
-
 
 .gallery-page {
   header {
@@ -87,7 +94,7 @@ body {
     }
 
     .right-side a {
-      background: orange;
+      background: $CONTRAST_COLOR;
       color: #222;
       padding: 10px;
       border-radius: 5px;
@@ -136,7 +143,7 @@ body {
             box-shadow: 0 0 30px #222;
           }
           &:active {
-            box-shadow: 0 0 30px orange;
+            box-shadow: 0 0 30px $CONTRAST_COLOR;
           }
         }
       }
@@ -149,6 +156,20 @@ body {
       a:hover {
         text-decoration: none;
         background-color: transparent;
+      }
+
+      &.add-button {
+        display: flex;
+        width: 70%;
+        align-items: center;
+        justify-content: center;
+
+        h3 {
+          text-align: center;
+          border: 3px solid $CONTRAST_COLOR;
+          border-radius: 5px;
+          padding: 20px;
+        }
       }
     }
   }
